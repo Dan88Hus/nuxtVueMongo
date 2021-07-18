@@ -4,7 +4,7 @@
   <div id="app">
     <div class="todo-wrapper">
       <div class="todo-container">
-        <!-- <TodoList /> -->
+        <!-- <TodoList /> can be written as todo-list  -->    
         <todo-list :todos="todos" />
         <div class="todo-create-btn-container">
           <todo-create @formSubmitted="createTodo" />
@@ -38,6 +38,7 @@ export default {
     this.todos = store.dispatch('initStore')
   },
   methods: {
+    //  data nin icindeki var a this. ile ulasabiliriz
     createTodo(todo) {
       store.dispatch('createTodo', todo)
     }
@@ -45,7 +46,7 @@ export default {
 }
 </script>
 
-<!-- Stylings, css, scss.... -->
+<!-- Stylings, css, scss.... lang scss yapinca sass-loader package yuklemeliyiz-->
 <style lang="scss">
 
 $color-red: red;
@@ -115,7 +116,8 @@ $color-red: red;
     display: flex;
 
     /* it defines alignment along the main axis */
-    justify-content: center;
+    // display: flex ile birlikte kullaniliyor
+    justify-content: center; 
 
     /*flex-direction: column;*/
     width: 100%;

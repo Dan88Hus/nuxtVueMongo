@@ -56,8 +56,8 @@ export default {
   }
 
   .modal {
-    display: none;
-    position: fixed; // stay in place
+    display: none; //block heps gosterecek
+    position: fixed; // stay in place, normalde fongunun altinda gosterir ama fized yaparak top ta kaliyor
     z-index: 9999;
     left: 0;
     top: 0;

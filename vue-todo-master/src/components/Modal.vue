@@ -28,7 +28,7 @@ export default {
       isOpen: false
     }
   },
-  watch: {
+  watch: { // onceki degerinide izliyebiliriz
     close(isClose, preIsClose) {
       if (isClose && this.isOpen) {
         this.isOpen = false
@@ -38,6 +38,10 @@ export default {
   methods: {
     close() {
       this.isOpen = false
+      // this.$emit('EVENtname') // customevent to inform parent component
+      // parent comp ta ise @EVENTname='functionName' yaparak degisikligi aliyoruz ve parent comp teki functiona aktariyoruz
+      // $emit te 2nd parameter yaparak anything we want data , we can send as objects,string tabi bu parent functiona arg diye gidecek 
+
     }
   }
 }
@@ -56,8 +60,8 @@ export default {
   }
 
   .modal {
-    display: none; //block heps gosterecek
-    position: fixed; // stay in place, normalde fongunun altinda gosterir ama fized yaparak top ta kaliyor
+    display: none; //block hep gosterecek
+    position: fixed; // stay in place, normalde dongunun altinda gosterir ama fized yaparak top ta kaliyor
     z-index: 9999;
     left: 0;
     top: 0;

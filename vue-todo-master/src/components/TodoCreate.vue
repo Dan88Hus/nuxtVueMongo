@@ -1,7 +1,8 @@
 
 
 <template>
-  <modal ref="modal">
+  <modal ref="modal"> 
+    <!-- slot kullanilacak -->
     <form class="app-form">
       <div class="form-control">
         <label class="label">Title</label>
@@ -17,7 +18,7 @@
           cols="30"
           rows="5"
           class="form-input">
-        </textarea>
+        </textarea> 
       </div>
       <div class="app-error">
         <div class="form-error">
@@ -47,12 +48,14 @@ export default {
       formError: ''
     }
   },
-  computed: {
-    isFormValid() {
+  computed: { // methoddan oonce calistigi icin form validation icin kullanilabilinir 
+    isFormValid() { 
       return this.form.title.length > 8 &&
              this.form.description.length > 10 ? true : false
     },
     modal() {
+      // console.log(this.$refs) modal comp. function ve degerlerine ulasmak icin 
+
       return this.$refs.modal
     }
   },
@@ -61,6 +64,7 @@ export default {
       if (this.isFormValid) {
         this.formError = ''
         this.$emit('formSubmitted', {...this.form})
+        // bu comp ta tuttugumuz datalari parent (App.vue) comp custom event olarak gonderip arraya ekliyecek
         this.modal.close()
         this.resetForm()
       } else {

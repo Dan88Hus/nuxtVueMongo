@@ -32,7 +32,7 @@ export default {
       todos: store.state.todos
     }
   },
-  // This function is run automaticaly by VUE framework
+  // This function is run automaticaly by VUE framework at the stage when component is created
   created() {
     // playground()
     this.todos = store.dispatch('initStore')

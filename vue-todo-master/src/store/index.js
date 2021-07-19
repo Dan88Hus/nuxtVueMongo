@@ -30,7 +30,7 @@ const store = {
       const todos = localStorage.getItem('my_todos')
 
       if (!todos) {
-        Vue.set(state, 'todos', INITIAL_DATA.todos)
+        Vue.set(state, 'todos', INITIAL_DATA.todos) // updates state
       } else {
         Vue.set(state, 'todos', JSON.parse(todos))
       }

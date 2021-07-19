@@ -65,6 +65,10 @@ export default {
     this.$store.dispatch('post/getArchivedPosts')
   },
   computed: {
+    // posts degistiginde computed property also update itself
+    // computed lari template icinde trigger etmek istedigimide () kullanmiyoruz ama methodlarda kullaniyoruz cunku methodlar function 
+    // functionlar her cagirdigimizda calisir ama computed lar bagli oldugu var, degistiginde calisir
+    // computed ares cached so theyy remember value but methods not.
     posts() {
       return this.$store.state.post.items
     },

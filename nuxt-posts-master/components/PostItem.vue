@@ -9,7 +9,8 @@
         <h5 class="subtitle is-5">{{subtitle}}</h5>
       </nuxt-link>
       <div class="post-footer">
-        by Filip Jerga, {{date | formatDate}}
+        by Filip Jerga, {{date | formatDate}} 
+        <!-- this pipe is calling plugin filter, now filter is global plugin -->
       </div>
     </div>
     <div class="post-right">

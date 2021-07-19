@@ -4,6 +4,10 @@ import moment from 'moment'
 // we created filter to appply it globally, instead of prosps each component
 // Plugins usually add global-level functionality to Vue. 
 // Some plugins provided by Vue.js official plugins such as vue-router automatically calls Vue.use()
+// !Dont forget to register in nuxt.config.js 
+//   plugins: [
+//  {src: '~/plugins/filters.js'}
+// ],
 
 Vue.filter('formatDate', (date, dateFormat = 'LL') => {
   if (!date) {

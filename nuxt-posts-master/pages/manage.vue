@@ -81,6 +81,8 @@ export default {
   },
   fetch({store}) {
     if (store.getters['post/hasEmptyItems']) {
+      // before to create getters, we used store.state.post.items.length === 0
+      
       return store.dispatch('post/fetchPosts')
     }
   },

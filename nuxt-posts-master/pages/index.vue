@@ -56,11 +56,17 @@ export default {
       }
     }
   },
-  fetch({store}) {
+  fetch({store}) { // context.store u destructure hali
     if (store.getters['post/hasEmptyItems']) {
       return store.dispatch('post/fetchPosts') // doya yolu storeun altinda post file ve /functionName
     }
   },
+  // mounted ve computed comment edildi ve asynData(){} yazildi 
+  // async asyncData(){
+    // const posts = await fetchPostsAPI()
+    // return {posts, 2nd Arg can be used for template variable}
+  // }
+
   mounted() { // mounted created in server da ki soylenisi, called only on client side
     this.$store.dispatch('post/getArchivedPosts')
   },

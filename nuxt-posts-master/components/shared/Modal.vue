@@ -1,12 +1,14 @@
 
 
 <template>
+<!-- template a name vermek icin yanina #TEMPLATENAME kullaniliyor -->
   <div>
     <div @click="isActive = true">
-      <slot name="actionButton">
+      <slot name="actionButton"> 
+        <!-- slotin namei templatein #TEMPNAME den geliyor, bunu parent elementten element almak icin yapiyoruz, -->
         <button class="button is-primary">Open</button>
-      </slot>
-    </div>
+      </slot> 
+     </div>
     <!-- Toggle Class Here -->
     <div :class="{'is-active': isActive}" class="modal">
       <div class="modal-background"></div>
@@ -17,7 +19,9 @@
           <button @click="isActive = false" class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
-          <slot></slot>
+          <slot></slot> 
+           <!-- modal form unu burda yazabilirdik, ama slot kullandik, yani form u parent componentte (manage.vue, silindi) da yazdik -->
+      <!-- ama variable la iletisim icin slot kullandik child da, burda  -->
         </section>
         <footer class="modal-card-foot">
           <button

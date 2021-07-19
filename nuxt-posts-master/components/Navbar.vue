@@ -60,7 +60,8 @@ export default {
   },
   methods: {
     navigateTo(path) {
-      this.$router.push(path)
+      this.$router.push(path) // yonlendirme icin router ama parametre almak icin route
+      
     },
     toggleIsActive() {
       this.isActive = !this.isActive

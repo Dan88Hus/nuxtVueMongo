@@ -58,10 +58,10 @@ export default {
   },
   fetch({store}) {
     if (store.getters['post/hasEmptyItems']) {
-      return store.dispatch('post/fetchPosts')
+      return store.dispatch('post/fetchPosts') // doya yolu storeun altinda post file ve /functionName
     }
   },
-  mounted() {
+  mounted() { // mounted created in server da ki soylenisi, called only on client side
     this.$store.dispatch('post/getArchivedPosts')
   },
   computed: {

@@ -57,6 +57,7 @@ export const actions = {
     localStorage.setItem('archived_posts', JSON.stringify(state.archivedItems))
   },
   fetchPosts({commit}) {
+    // fetchPosts(context) context is accessible 
     return this.$axios.$get('/api/posts')
       .then((posts) => {
         commit('setPosts', posts)

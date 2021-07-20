@@ -48,6 +48,8 @@ export default {
     }
   },
   watch: {
+    // izlemek istedigimiz data property(newValue, oldValue)
+    // whenever postData changes we run postData function
     postData(data) {
       this.post = {...data}
     }

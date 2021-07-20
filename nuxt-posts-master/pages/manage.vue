@@ -5,6 +5,7 @@
       <div class="columns mail-app">
         <aside class="column is-2 aside hero">
           <post-create />
+
         </aside>
         <div class="column is-4 messages hero is-fullheight" id="message-feed">
           <div v-if="posts && posts.length > 0" class="inbox-messages" id="inbox-messages">
@@ -39,6 +40,7 @@
           <div v-if="activePost" class="box message-preview">
             <button @click="deletePost" class="button is-danger delete-button">Delete</button>
             <post-manage :postData="activePost" />
+            
           </div>
         </div>
       </div>

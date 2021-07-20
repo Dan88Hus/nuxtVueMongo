@@ -73,6 +73,7 @@ export const actions = {
       .then((posts) => {
         const selectedPost = posts.find((p) => p._id === postId)
         commit('setPost', selectedPost)
+        // 1st argument is mutation name 
         return selectedPost
       })
   },
@@ -136,7 +137,10 @@ export const mutations = {
     state.items.push(post)
   },
   replacePost(state, {post, index}) {
+    // state.posts[index = post] oldu vue.set cunku reactivity does not work well 
+
     Vue.set(state.items, index, post)
+    
   },
   deletePost(state, postIndex) {
     state.items.splice(postIndex, 1)

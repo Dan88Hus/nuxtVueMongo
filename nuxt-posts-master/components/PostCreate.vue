@@ -72,7 +72,8 @@ export default {
   methods: {
     createPost({closeModal, data}) {
       this.$store.dispatch('post/createPost', {...this.form})
-      closeModal()
+      closeModal() // child component modal.vue dan geldi $emit ile birlikte 
+       
       this.resetForm()
     },
     resetForm() {

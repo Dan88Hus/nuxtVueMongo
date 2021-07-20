@@ -45,7 +45,9 @@ export default {
   methods: {
     emitModalSubmit() {
       this.$emit('modalSubmitted', {closeModal: this.closeModal, data: 'Just some data'})
-    },
+      //  verdigimiz isim modalSubmitted parent componentte custom event adi, parent component PostCreate.vue
+      
+      },
     closeModal() {
       this.isActive = false
     }

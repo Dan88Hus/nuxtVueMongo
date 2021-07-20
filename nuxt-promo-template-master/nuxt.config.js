@@ -42,6 +42,9 @@ module.exports = {
   */
   axios: {
   },
+  serverMiddleware: [
+    '~server/routes/index'
+  ],
   /*
   ** Build configuration
   */

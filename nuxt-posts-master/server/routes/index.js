@@ -4,10 +4,11 @@ const bodyParser = require('body-parser')
 
 const fs = require('fs')
 const path = require('path')
+const { config } = require('process')
 const filePath = '../../store/initial_data.json'
 const initialData = require(filePath)
 
-app.use(bodyParser.json())
+app.use(bodyParser.json()) 
 
 app.get('/posts', function(req, res) {
   return res.json(initialData.posts)
@@ -22,7 +23,7 @@ app.post('/posts', function(req, res) {
       return res.status(422).send(err)
     }
 
-    return res.json('File Sucesfully updated')
+    return res.json('File Sucesfully added')
   })
 })
 
@@ -69,9 +70,14 @@ app.delete('/posts/:id', function(req, res) {
 
 
 module.exports = {
-  path: '/api',
+  path: '/api', // prefix on every route
   handler: app
 }
+
+// at config.js 
+// serverMiddleware: [
+//   '~/server/routes/index'
+// ],
 
 
 

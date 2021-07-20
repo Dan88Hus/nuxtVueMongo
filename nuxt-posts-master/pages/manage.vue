@@ -36,6 +36,7 @@
             There are no posts :(
           </div>
         </div>
+        
         <div class="column is-6 message hero is-fullheight" id="message-pane">
           <div v-if="activePost" class="box message-preview">
             <button @click="deletePost" class="button is-danger delete-button">Delete</button>

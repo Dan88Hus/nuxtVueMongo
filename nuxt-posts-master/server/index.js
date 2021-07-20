@@ -20,7 +20,9 @@ async function start() {
   } else {
     await nuxt.ready()
   }
-
+  app.get("/api/posts", function(req,res) {
+    return res.json({posts: "Just some text as data"})
+  })
   // Give nuxt middleware to express
   app.use(nuxt.render)
 

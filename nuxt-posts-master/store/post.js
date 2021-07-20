@@ -81,11 +81,13 @@ export const actions = {
     postData._id = Math.random().toString(36).substr(2, 7)
     postData.createdAt = (new Date()).getTime()
 
-    return this.$axios.$post('/api/posts', postData)
+    this.$axios.$post('/api/posts', postData)
       .then((res) => {
+        console.log(res)
         commit('addPost', postData)
         return postData
       })
+      
   },
   updatePost({commit, state}, postData) {
     const index = state.items.findIndex((post) => {
@@ -134,6 +136,7 @@ export const mutations = {
     state.item = post
   },
   addPost(state, post) {
+    console.log(post)
     state.items.push(post)
   },
   replacePost(state, {post, index}) {

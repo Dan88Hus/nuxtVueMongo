@@ -9,9 +9,11 @@
       <div class="container">
         <h1 class="title">Featured Courses</h1>
         <div class="columns">
-          <div class="column is-one-quarter">
+          <!-- iterate columns with v-for dont forget key-->
+          <div v-for="course in courses" :key="course._id" 
+          class="column is-one-quarter">
             <!-- CARD-ITEM -->
-            <coursecard />
+            <coursecard :course="course"/>
           </div>
         </div>
       </div>
@@ -28,6 +30,7 @@
         </div>
       </div>
     </section>
+    <pre>{{courses}}</pre>
   </div>
 </template>
 
@@ -35,6 +38,7 @@
 import coursecard from '../components/coursecard.vue'
 import hero from '../components/shared/hero.vue'
 import blogcard from '../components/blogcard.vue'
+import {mapState} from 'vuex'
 
 
 export default {
@@ -42,6 +46,16 @@ export default {
     coursecard, blogcard, hero
     
   },
+  computed: {
+    ...mapState({
+      courses: state=> state.course.items
+    })
+  },
+  async fetch({store}){
+     
+    await store.dispatch('course/fetchCourses')
+    // debugger
+  }
 }
   
 </script>

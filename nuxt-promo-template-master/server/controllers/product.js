@@ -8,6 +8,7 @@ exports.getProducts = function (req, res) {
     .populate('category')
     .sort({'updatedAt': -1})
     .exec((errors, products) => {
+      // console.log(products)
     if (errors) {
       return res.status(422).send(errors);
     }

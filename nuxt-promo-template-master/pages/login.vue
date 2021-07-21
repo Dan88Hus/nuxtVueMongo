@@ -84,8 +84,10 @@ export default {
     }
   },
   methods: {
-    login() {
+    login({}) {
       this.$v.form.$touch()
+      this.$store.dispatch('auth/login', this.form)
+      debugger
     }
   }
 };

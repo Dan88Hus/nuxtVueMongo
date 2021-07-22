@@ -2,11 +2,18 @@ export const state = () => ({
     user: null
 })
 
-// export const getters = {
-//     getterValue: state => {
-//         return state.value
-//     }
-// }
+export const getters = { //getters are function to access state
+    authUser(state) {
+        return state.user || null 
+    },
+    isAuthenticated(state){
+        return !!state.user // if(state.user) {return true} else{ return false}
+
+    },
+    isAdmin(state){
+        return state.user && state.user.role && state.user.role === "admin"
+    }
+}
 
 export const mutations = {
     setAuthUser(state, user){

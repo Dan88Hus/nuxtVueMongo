@@ -4,13 +4,19 @@ export const state = () => ({
 
 export const getters = { //getters are function to access state
     authUser(state) {
+        console.log("authUser", state)
         return state.user || null 
     },
     isAuthenticated(state){
+        console.log("isAuthenticated ")
+        console.log(state)
         return !!state.user // if(state.user) {return true} else{ return false}
 
     },
     isAdmin(state){
+        console.log("isAdmin")
+        console.log(state)
+
         return state.user && state.user.role && state.user.role === "admin"
     }
 }

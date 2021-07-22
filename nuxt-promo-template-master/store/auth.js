@@ -17,8 +17,8 @@ export const getters = { //getters are function to access state
 
 export const mutations = {
     setAuthUser(state, user){
-        console.log("setAuthUset")
-        console.log(user)
+        // console.log("setAuthUset")
+        // console.log(user)
         state.user = user
     }
 }
@@ -35,6 +35,16 @@ export const actions = {
         })
         .catch((err)=>{
             return Promise.reject(err)
+        })
+    },
+    logout({commit}){
+        this.$axios.$post("/api/v1/users/logout")
+        .then(()=>{
+            commit("setAuth", null)
+            return true
+        })
+        .catch((error)=>{
+            return Promise.reject(error)
         })
     },
     getAuthUser({commit, getters}){

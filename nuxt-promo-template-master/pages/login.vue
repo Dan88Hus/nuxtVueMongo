@@ -83,11 +83,29 @@ export default {
       }
     }
   },
+  computed: {
+    isFormValid(){
+      return !this.$v.$invalid
+    }
+  },
   methods: {
   
     login({}) {
+      console.log("login")
       this.$v.form.$touch()
-      this.$store.dispatch('auth/login', this.form)
+      if(this.isFormValid){
+        this.$store.dispatch('auth/login', this.form)
+        .then(()=>{
+          console.log("redirecting")
+          this.$toasted.success("Login Success",{duration: 2000})
+          this.$router.push("/")
+        })
+        .catch((err)=>{
+          console.log(err)
+          this.$toasted.error("wrong user credentials", {duration: 2000})
+        })
+
+      }
       
     }
   }

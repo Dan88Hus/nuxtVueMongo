@@ -36,5 +36,22 @@ export const actions = {
         .catch((err)=>{
             return Promise.reject(err)
         })
+    },
+    getAuthUser({commit, getters}){
+        const authUser = getters.authUser
+        if(authUser){
+            return Promise.resolve(authUser)
+        }
+        return this.$axios.$get("/api/v1/users/me")
+        .then(()=>{
+            commit("setAuthUser", user)
+            return state.user
+        })
+        .catch((err)=>{
+            commit("setAuthUser", null)
+            // console.log(err)
+            return Promise.reject(err)
+        })
+
     }
 }

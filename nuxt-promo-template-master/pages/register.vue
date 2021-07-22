@@ -218,10 +218,26 @@ export default {
       },
     },
   },
+  computed:{
+    isFormValid(){
+      return !this.$v.form.$touch();
+    }
+  },
   methods: {
     register() {
       // console.log(this.form);
-      this.$v.form.$touch();
+      if(this.isFormValid){
+        this.$store.dispatch("auth/register", this.form)
+        .then(()=>{
+          this.$toasted.success("register is success", {duration: 2000})
+          this.$router.push("/login")
+        })
+        .catch((err)=>{
+          this.$toasted.error("register is failed", {duration: 2000})
+            
+        })
+
+      }
     },
   },
 };

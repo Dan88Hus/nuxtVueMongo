@@ -37,6 +37,10 @@ export const actions = {
             return Promise.reject(err)
         })
     },
+    register(context, registerData){// if arg required but will not be used, _ is helpfull istead of arg
+        return this.$axios.$post("/api/v1/users/register", registerData)
+        .catch(error => Promise.reject(error))
+    },
     logout({commit}){
         this.$axios.$post("/api/v1/users/logout")
         .then(()=>{

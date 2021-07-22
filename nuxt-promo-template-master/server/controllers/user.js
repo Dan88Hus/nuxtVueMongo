@@ -72,6 +72,7 @@ exports.login = function (req, res, next) {
       }
     })
   }
+  // console.log(email,password)
 
   return passport.authenticate('local', (err, passportUser) => {
     if (err) {
@@ -85,6 +86,7 @@ exports.login = function (req, res, next) {
         return res.json(passportUser)
       });
     } else {
+      console.log("no passportUser")
       return res.status(422).send({errors: {
         'message': 'Invalid password or email'
       }})

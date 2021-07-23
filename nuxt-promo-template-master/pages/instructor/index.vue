@@ -5,7 +5,7 @@
     <div class="centered">
       <div class="columns">
         <!-- Go to /instructor/courses -->
-        <div class="box" @click="() => {}">
+        <div class="box" @click="() => $router.push('/instructor/courses')">
           <div>
             Courses
           </div>
@@ -28,7 +28,8 @@
 </template>
 <script>
 export default {
-    middleware: "admin"
+    middleware: "admin",
+    layout: "instructor,"
 }
 </script>
 <style scoped lang="scss">

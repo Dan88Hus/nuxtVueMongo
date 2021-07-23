@@ -66,6 +66,7 @@
 <script>
 import {required, email} from 'vuelidate/lib/validators'
 export default {
+  // middleware: 'guest' ,
   data(){
     return {
       form: {

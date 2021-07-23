@@ -1,11 +1,11 @@
 
 export default function({store, redirect}) {
+    // console.log("store", store)
     const isAuth = store.getters["auth/isAuthenticated"]
-    if(!isAuth){
-        return redirect("/notauthenticated")
-    }
     if(isAuth){
-        console.log("isAuth middleware")
+        return redirect("/")
     }
+
+    
 };
 

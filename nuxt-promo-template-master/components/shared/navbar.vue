@@ -37,12 +37,12 @@
         <nuxt-link to="#" class="navbar-item">
           Cv
         </nuxt-link> 
-        <nuxt-link to="/instructor" class="navbar-item">
+        <!-- <nuxt-link to="/instructor" class="navbar-item">
           Instructor
         </nuxt-link>
          <nuxt-link to="/secret" class="navbar-item">
           Secret
-        </nuxt-link>
+        </nuxt-link> -->
    
       </div>
 

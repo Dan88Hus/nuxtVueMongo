@@ -1,5 +1,7 @@
 
-
+export const state = () => ({
+  user: null
+})
 
 export const mutations = {
   setItems(state, { resource, items }) {

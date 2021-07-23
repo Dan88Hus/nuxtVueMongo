@@ -176,6 +176,7 @@ import {
 } from "vuelidate/lib/validators";
 import {supportedFileType} from '../helpers/validators'
 export default {
+  middleware: 'guest' ,
   data() {
     return {
       form: {
@@ -223,6 +224,7 @@ export default {
       return !this.$v.form.$touch();
     }
   },
+
   methods: {
     register() {
       // console.log(this.form);
